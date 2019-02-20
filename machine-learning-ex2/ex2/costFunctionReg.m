@@ -30,7 +30,7 @@ grad(1) = (1/m)*(X(:,1)'*(y_pred - y));
 %and now calculate rest of grad and then join them in one vector
 % matrix multiply X[:,remaining col]' (remaining columns of X) with (y_pred - y)
 Xt = X(:,[2:size(X,2)])'; %taking X col 2 onwards
-grad_temp = (1/m)*(Xt*(y_pred - y)) + lambda/m.*theta([2:size(theta)]); % matrix multiplication 27xm X mx1 = 27x1
+grad_temp = (1/m)*(Xt*(y_pred - y)) + lambda/m*theta([2:size(theta)]); % matrix multiplication 27xm X mx1 = 27x1
 grad([2:size(grad)]) = grad_temp;
 
 % =============================================================
